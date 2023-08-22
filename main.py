@@ -1,16 +1,15 @@
-# This is a sample Python script.
+from Tree_Red_Black import RedBlackTree
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    tree = RedBlackTree()
+    print('print \'exit\' to exit program. Otherwise enter tree number')
+    while True:
+        tree.print_tree()
+        try:
+            user_input = input('> ')
+            if user_input == 'exit':
+                print('Exiting....')
+                break
+            node = tree.add_node(int(user_input))
+        except ValueError:
+            print('Incorrect')
